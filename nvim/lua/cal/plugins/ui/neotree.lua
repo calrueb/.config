@@ -1,7 +1,7 @@
 return {
 	"nvim-neo-tree/neo-tree.nvim",
 	branch = "v3.x",
-	event = "VeryLazy",
+	lazy = false,
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"nvim-tree/nvim-web-devicons",
@@ -50,6 +50,9 @@ return {
 					visible = true,
 				},
 			},
+		})
+		vim.api.nvim_create_autocmd("VimEnter", {
+			command = "Neotree filesystem reveal right",
 		})
 	end,
 }
